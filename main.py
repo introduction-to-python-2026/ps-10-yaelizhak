@@ -5,7 +5,7 @@ from skimage.morphology import ball
 import numpy as np
 import matplotlib.pyplot as plt
 
-clean_image = median(Timon, ball(2))
+clean_image = median(Timon, ball(3))
 edgeMAG = edge_detection(clean_image)
 plt.imshow(edgeMAG, cmap = 'gray')
 
