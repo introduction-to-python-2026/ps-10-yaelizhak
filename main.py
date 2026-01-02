@@ -16,7 +16,7 @@ plt.show()
 
 edgeMAG_copy = edgeMAG.copy()
 edgeMAG_copy[edgeMAG_copy < 50] = 0
-edgeMAG_copy[edgeMAG_copy >= 50] = 1
+edgeMAG_copy[edgeMAG_copy >= 50] = 255
 plt.imshow(edgeMAG_copy, cmap = 'gray')
 
 from PIL import Image
