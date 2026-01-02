@@ -5,7 +5,7 @@ from skimage.morphology import ball
 import numpy as np
 import matplotlib.pyplot as plt
 
-image = load_image('Timon.jpg')
+image = load_image('.tests/lena.jpg')  
 clean_image = median(image, ball(3))  
 edgeMAG = edge_detection(clean_image)
 edge_binary = edgeMAG > 50
