@@ -12,7 +12,7 @@ def load_image(file_path):
     # אם יש 3 ערוצים (RGB), נהפוך לגרייסקייל על ידי לקיחת ערוץ אחד בלבד
     if image.ndim == 3:
         image = image[..., 0]  # כמו שהבודק עושה
-    return image
+    return image 
 
 def edge_detection(image):
     gray_image = np.array(image)
