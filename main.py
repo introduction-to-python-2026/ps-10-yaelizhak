@@ -15,11 +15,11 @@ plt.ylabel('Frequency')
 plt.show()
 
 edgeMAG_copy = edgeMAG.copy()
-edgeMAG_copy[edgeMAG_copy < 100] = 0
-edgeMAG_copy[edgeMAG_copy >= 100] = 1
+edgeMAG_copy[edgeMAG_copy < 50] = 0
+edgeMAG_copy[edgeMAG_copy >= 50] = 1
 plt.imshow(edgeMAG_copy, cmap = 'gray')
 
 from PIL import Image
 edge_image = Image.fromarray((edgeMAG_copy * 255).astype(np.uint8))
-edge_image.save('my_edges.png')
+edge_image.save('my_edges(1).png')
 
