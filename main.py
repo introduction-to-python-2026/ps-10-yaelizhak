@@ -5,21 +5,10 @@ from skimage.morphology import ball
 import numpy as np
 import matplotlib.pyplot as plt
 
-clean_image = median(Timon, ball(3))
+image = load_image('Timon')  
+clean_image = median(image, ball(3))  
 edgeMAG = edge_detection(clean_image)
-plt.imshow(edgeMAG, cmap = 'gray')
-
-plt.hist(edgeMAG.ravel(), bins=50)
-plt.xlabel('Edge magnitude value')
-plt.ylabel('Frequency')
-plt.show()
-
-edgeMAG_copy = edgeMAG.copy()
-edgeMAG_copy[edgeMAG_copy < 50] = 0
-edgeMAG_copy[edgeMAG_copy >= 50] = 255
-plt.imshow(edgeMAG_copy, cmap = 'gray')
-
-from PIL import Image
-edge_image = Image.fromarray((edgeMAG_copy * 255).astype(np.uint8))
+edge_binary = (edgeMAG > 50).astype(np.uint8) * 255
+edge_image = Image.fromarray(edge_binary)
 edge_image.save('my_edges(1).png')
 
